@@ -1,0 +1,490 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un vol au supermarché - Compréhension A2</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(106, 142, 251, 0.2);
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .story {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .questions-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .questions-section h2 {
+            color: #6e8efb;
+            border-bottom: 3px solid #a777e3;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+        
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f0f4ff;
+            border-left: 5px solid #6e8efb;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        
+        .vocabulary-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .vocabulary-section h2 {
+            color: #6e8efb;
+            border-bottom: 3px solid #a777e3;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+        
+        .vocab-category {
+            margin-bottom: 30px;
+        }
+        
+        .vocab-category h3 {
+            background-color: #6e8efb;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .vocab-item {
+            display: flex;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f8f9ff;
+            border-radius: 5px;
+            border-left: 3px solid #a777e3;
+        }
+        
+        .vocab-word {
+            font-weight: bold;
+            color: #6e8efb;
+            min-width: 200px;
+        }
+        
+        .answers-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .answers-section h2 {
+            color: #6e8efb;
+            border-bottom: 3px solid #a777e3;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+        
+        .answer {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .image-box {
+            width: 300px;
+            margin: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .image-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .image-caption {
+            padding: 15px;
+            background-color: #f5f5f5;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .chart-container {
+            margin: 40px 0;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .chart-container h2 {
+            color: #6e8efb;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .chart {
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+        
+        .bar {
+            width: 60px;
+            background: linear-gradient(to top, #6e8efb, #a777e3);
+            border-radius: 5px 5px 0 0;
+            position: relative;
+            transition: height 1s ease;
+        }
+        
+        .bar-label {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .image-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .image-box {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Un vol au supermarché</h1>
+    </div>
+    
+    <div class="story">
+        <p>Hier, il y a un vol au supermarché « Marché Central ». Une victime, madame Dupont, a appelé la police. Elle a dit : « Un homme a volé mon portefeuille ! »</p>
+        
+        <p>Très vite, un policier est arrivé sur la scène de crime. Il a parlé avec madame Dupont et avec un témoin, monsieur Martin. Monsieur Martin a décrit le suspect : un homme jeune avec un jean bleu et une casquette.</p>
+        
+        <p>L’enquêteur du commissariat a regardé les caméras de sécurité. Sur la vidéo, on voit le coupable : c’est bien l’homme avec la casquette qui commet le délit.</p>
+        
+        <p>Le lendemain, les agents de police ont arrêté le jeune homme. Ils l’ont interrogé au commissariat. Le juge va décider s’il va en prison. L’avocat du jeune homme va le défendre au tribunal.</p>
+    </div>
+    
+    <div class="image-container">
+        <div class="image-box">
+            <img src="https://placehold.co/600x400/6e8efb/ffffff?text=Supermarché" alt="Supermarché Marché Central">
+            <div class="image-caption">Supermarché Marché Central</div>
+        </div>
+        <div class="image-box">
+            <img src="https://placehold.co/600x400/a777e3/ffffff?text=Police" alt="Police enquêtant">
+            <div class="image-caption">Police sur la scène de crime</div>
+        </div>
+        <div class="image-box">
+            <img src="https://placehold.co/600x400/4caf50/ffffff?text=Tribunal" alt="Tribunal">
+            <div class="image-caption">Le tribunal</div>
+        </div>
+    </div>
+    
+    <div class="chart-container">
+        <h2>Étapes de l'enquête policière</h2>
+        <div class="chart">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div class="bar" style="height: 60px;">
+                    <div style="position: absolute; top: -25px; left: 0; width: 60px; text-align: center; font-size: 12px;">Appel</div>
+                </div>
+                <div class="bar-label">Appel à la police</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div class="bar" style="height: 120px;">
+                    <div style="position: absolute; top: -25px; left: 0; width: 60px; text-align: center; font-size: 12px;">Enquête</div>
+                </div>
+                <div class="bar-label">Enquête sur place</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div class="bar" style="height: 180px;">
+                    <div style="position: absolute; top: -25px; left: 0; width: 60px; text-align: center; font-size: 12px;">Preuves</div>
+                </div>
+                <div class="bar-label">Analyse des preuves</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div class="bar" style="height: 240px;">
+                    <div style="position: absolute; top: -25px; left: 0; width: 60px; text-align: center; font-size: 12px;">Arrestation</div>
+                </div>
+                <div class="bar-label">Arrestation du suspect</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div class="bar" style="height: 150px;">
+                    <div style="position: absolute; top: -25px; left: 0; width: 60px; text-align: center; font-size: 12px;">Tribunal</div>
+                </div>
+                <div class="bar-label">Procès au tribunal</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="questions-section">
+        <h2>Questions de compréhension (niveau A2)</h2>
+        <div class="question">1. Où est-ce qu'il y a eu un vol ?</div>
+        <div class="question">2. Qui est la victime ?</div>
+        <div class="question">3. Qu'est-ce que le suspect a volé ?</div>
+        <div class="question">4. Qui a décrit le suspect à la police ?</div>
+        <div class="question">5. Qu'est-ce que l'enquêteur a regardé pour trouver une preuve ?</div>
+        <div class="question">6. Où est-ce que les policiers ont interrogé le coupable ?</div>
+        <div class="question">7. Qui va défendre le suspect au tribunal ?</div>
+    </div>
+    
+    <div class="vocabulary-section">
+        <h2>Vocabulaire du texte</h2>
+        
+        <div class="vocab-category">
+            <h3>A. Les personnes</h3>
+            <div class="vocab-item">
+                <div class="vocab-word">Un suspect / une suspecte</div>
+                <div class="vocab-meaning">подозреваемый(-ая)</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un témoin</div>
+                <div class="vocab-meaning">свидетель</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Une victime</div>
+                <div class="vocab-meaning">жертва</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un coupable / une coupable</div>
+                <div class="vocab-meaning">виновный(-ая), преступник</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un criminel / une criminelle</div>
+                <div class="vocab-meaning">преступник (тяжкое преступление)</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un délinquant / une délinquante</div>
+                <div class="vocab-meaning">правонарушитель</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un juge</div>
+                <div class="vocab-meaning">судья</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un avocat / une avocate</div>
+                <div class="vocab-meaning">адвокат</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un policier / une policière</div>
+                <div class="vocab-meaning">полицейский</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un agent de police</div>
+                <div class="vocab-meaning">сотрудник полиции</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un détective / un enquêteur</div>
+                <div class="vocab-meaning">детектив, следователь</div>
+            </div>
+        </div>
+        
+        <div class="vocab-category">
+            <h3>B. Les crimes et les délits</h3>
+            <div class="vocab-item">
+                <div class="vocab-word">Un meurtre</div>
+                <div class="vocab-meaning">убийство</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un vol</div>
+                <div class="vocab-meaning">кража</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un vol à l'étalage</div>
+                <div class="vocab-meaning">карманная кража</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un cambriolage</div>
+                <div class="vocab-meaning">кража со взломом (из помещения)</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un braquage</div>
+                <div class="vocab-meaning">ограбление (банка, магазина)</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Une agression</div>
+                <div class="vocab-meaning">нападение, assault</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un enlèvement</div>
+                <div class="vocab-meaning">похищение человека</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un vandalisme</div>
+                <div class="vocab-meaning">вандализм</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Une fraude</div>
+                <div class="vocab-meaning">мошенничество, обман</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un délit</div>
+                <div class="vocab-meaning">проступок, правонарушение (менее серьезное, чем crime)</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un crime</div>
+                <div class="vocab-meaning">серьезное преступление (уголовное)</div>
+            </div>
+        </div>
+        
+        <div class="vocab-category">
+            <h3>C. Les lieux et les objets</h3>
+            <div class="vocab-item">
+                <div class="vocab-word">Une scène de crime</div>
+                <div class="vocab-meaning">место преступления</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un commissariat (de police)</div>
+                <div class="vocab-meaning">полицейский участок</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Un tribunal</div>
+                <div class="vocab-meaning">суд</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Une prison</div>
+                <div class="vocab-meaning">тюрьма</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Une preuve</div>
+                <div class="vocab-meaning">доказательство</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Une empreinte digitale</div>
+                <div class="vocab-meaning">отпечаток пальца</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Une arme</div>
+                <div class="vocab-meaning">оружие</div>
+            </div>
+        </div>
+        
+        <div class="vocab-category">
+            <h3>D. Les verbes</h3>
+            <div class="vocab-item">
+                <div class="vocab-word">Commettre un crime / un délit</div>
+                <div class="vocab-meaning">совершить преступление/проступок</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Enquêter (sur une affaire)</div>
+                <div class="vocab-meaning">расследовать (дело)</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Arrêter (quelqu'un)</div>
+                <div class="vocab-meaning">арестовать (кого-либо)</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Interroger (un suspect)</div>
+                <div class="vocab-meaning">допрашивать (подозреваемого)</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Accuser (qqun de qqch)</div>
+                <div class="vocab-meaning">обвинять (кого-л. в чем-л.)</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Voler (qqch)</div>
+                <div class="vocab-meaning">украсть (что-либо)</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Cambrioler (une maison)</div>
+                <div class="vocab-meaning">совершить кражу со взломом (в доме)</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Agresser (qqun)</div>
+                <div class="vocab-meaning">нападать (на кого-либо)</div>
+            </div>
+            <div class="vocab-item">
+                <div class="vocab-word">Témoigner</div>
+                <div class="vocab-meaning">давать показания (свидетельствовать)</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="answers-section">
+        <h2>Réponses (для самопроверки)</h2>
+        <div class="answer">1. Il y a eu un vol au supermarché « Marché Central ».</div>
+        <div class="answer">2. La victime est madame Dupont.</div>
+        <div class="answer">3. Il a volé le portefeuille de madame Dupont.</div>
+        <div class="answer">4. Un témoin, monsieur Martin, a décrit le suspect.</div>
+        <div class="answer">5. L'enquêteur a regardé les caméras de sécurité.</div>
+        <div class="answer">6. Ils l'ont interrogé au commissariat.</div>
+        <div class="answer">7. L'avocat du jeune homme va le défendre.</div>
+    </div>
+</body>
+</html>
+```
